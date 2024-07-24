@@ -5,7 +5,7 @@ export interface ContainerComBackgroundProps {
   imagem: string;
 }
 
-export default function ContainerComBacground(
+export default function ContainerComBackground(
   props: ContainerComBackgroundProps
 ) {
   return (

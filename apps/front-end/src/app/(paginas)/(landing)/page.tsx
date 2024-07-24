@@ -1,17 +1,23 @@
 "use client";
 
 import TituloSlogan from "@/components/landing/TituloSlogan";
+import NossosProfissionais from "@/components/profissional/NossosProfissionais";
 import NossosServicos from "@/components/servico/NossosServicos";
-import ContainerComBacground from "@/components/shared/ContainerComBackground";
+import ContainerComBackground from "@/components/shared/ContainerComBackground";
 
 export default function Landing() {
   return (
     <div>
       <TituloSlogan />
-
-      <ContainerComBacground imagem="/banners/servicos.webp">
+      {/* Seção de Serviços */}
+      <ContainerComBackground imagem="/banners/servicos.webp">
         <NossosServicos />
-      </ContainerComBacground>
+      </ContainerComBackground>
+
+      {/* Seção de Profissionais */}
+      <ContainerComBackground imagem="/banners/profissionais.webp">
+        <NossosProfissionais />
+      </ContainerComBackground>
     </div>
   );
 }
