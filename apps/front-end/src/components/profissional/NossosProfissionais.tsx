@@ -7,7 +7,7 @@ export default function NossosProfissionais() {
   const { profissionais } = useProfissionais();
 
   return (
-    <div>
+    <div className="flex flex-col gap-16">
       <Titulo
         tag="Time"
         principal="Nossos Brutos"
