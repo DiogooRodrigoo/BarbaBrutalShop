@@ -42,7 +42,7 @@
 
 @layer components {
   .container {
-    @apply mx-auto lg:max-w-7x1 px-5 lg:px-0;
+    @apply mx-auto lg:max-w-7xl px-5 lg:px-0;
   }
 
   .button {
