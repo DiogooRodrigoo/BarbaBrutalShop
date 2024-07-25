@@ -17,7 +17,7 @@ const servicos: Servico[] = [
       "Venha dar um trato na sua barba de lenhador, com aparo preciso e estilo de macho raiz. Saia com uma barba que impõe respeito e faz tremer até as árvores.",
     preco: 45,
     quantidadeDeSlots: 2,
-    imagemUrl: "servicos/corte-de-barba.jpg",
+    imagemUrl: "/servicos/corte-de-barba.jpg",
   },
   {
     id: 3,
