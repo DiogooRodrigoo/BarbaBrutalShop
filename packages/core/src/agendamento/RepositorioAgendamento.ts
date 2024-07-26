@@ -1,4 +1,12 @@
+import { profissionais } from "@barba/core";
+import Agendamento from "./Agendamento";
+export default interface RepositorioAgendamento {
+  criar(agendamento: Agendamento): Promise<void>;
 
-export default interface RepositorioAgendamento{
-    
+  buscarPorEmail(email: string): Promise<Agendamento[]>;
+
+  buscarPorProfissionalEData(
+    profissional: number,
+    data: Date
+  ): Promise<Agendamento[]>;
 }
