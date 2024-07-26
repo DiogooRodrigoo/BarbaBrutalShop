@@ -1,3 +1,5 @@
+"use client"; // retirar
+
 import { Profissional, Servico } from "@barba/core";
 import { DataUtils } from "@barba/core";
 import { createContext, useCallback, useEffect, useState } from "react";
