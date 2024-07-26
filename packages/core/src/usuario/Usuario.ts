@@ -1,5 +1,5 @@
 export default interface Usuario {
   email: string;
   nome: string;
-  telefone?: number;
+  telefone?: string;
 }
