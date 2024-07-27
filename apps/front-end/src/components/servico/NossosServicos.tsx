@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import useServicos from "@/data/hooks/useServicos";
+import { useServicos } from "@barba/ui";
 import { useRouter } from "next/navigation";
 import Titulo from "../shared/Titulo";
 import { Servico } from "@barba/core";

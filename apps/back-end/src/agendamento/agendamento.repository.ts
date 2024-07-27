@@ -1,6 +1,6 @@
-import { PrismaService } from './../db/prisma.service';
 import { Injectable } from '@nestjs/common';
 import { Agendamento, RepositorioAgendamento } from '@barba/core';
+import { PrismaService } from 'src/db/prisma.service';
 
 @Injectable()
 export class AgendamentoRepository implements RepositorioAgendamento {
@@ -11,7 +11,7 @@ export class AgendamentoRepository implements RepositorioAgendamento {
       data: {
         data: agendamento.data,
         emailCliente: agendamento.emailCliente,
-        profissional: { connect: { id: agendamento.profissional.id } },
+        profissional: { connect: { id: agendamento.id } },
         servicos: {
           connect: agendamento.servicos.map((servico) => ({ id: servico.id })),
         },
@@ -53,9 +53,10 @@ export class AgendamentoRepository implements RepositorioAgendamento {
         profissionalId: profissional,
         data: {
           gte: inicioDoDia,
-          lt: fimDoDia,
+          lte: fimDoDia,
         },
       },
+      include: { servicos: true },
     });
 
     return resultado;

@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import useProfissionais from "@/data/hooks/useProfissionais";
+import { useProfissionais } from "@barba/ui";
 import Titulo from "../shared/Titulo";
 import { Profissional } from "@barba/core";
 import ProfissionalItem from "./ProfissionalItem";
