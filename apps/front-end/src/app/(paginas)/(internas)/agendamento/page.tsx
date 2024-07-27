@@ -4,7 +4,7 @@ import ProfissionalInput from "@/components/agendamento/ProfissionalInput";
 import ServicosInput from "@/components/agendamento/ServicoInput";
 import Sumario from "@/components/agendamento/Sumario";
 import Passos from "@/components/shared/Passos";
-import Cabecalho from "@/data/hooks/Cabecalho";
+import Cabecalho from "@/components/shared/Cabecalho";
 import useAgendamento from "@/data/hooks/useAgendamento";
 import { Profissional, Servico } from "@barba/core";
 import { useState } from "react";
