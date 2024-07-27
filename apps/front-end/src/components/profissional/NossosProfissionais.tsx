@@ -1,3 +1,5 @@
+'use client'
+
 import useProfissionais from "@/data/hooks/useProfissionais";
 import Titulo from "../shared/Titulo";
 import { Profissional } from "@barba/core";

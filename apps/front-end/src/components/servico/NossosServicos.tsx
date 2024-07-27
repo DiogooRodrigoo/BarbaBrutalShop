@@ -1,3 +1,5 @@
+'use client'
+
 import useServicos from "@/data/hooks/useServicos";
 import { useRouter } from "next/navigation";
 import Titulo from "../shared/Titulo";

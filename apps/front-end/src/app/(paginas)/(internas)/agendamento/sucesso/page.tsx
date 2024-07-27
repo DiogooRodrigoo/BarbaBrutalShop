@@ -1,3 +1,5 @@
+'use client'
+
 import AgendamentoComSucesso from "@/components/agendamento/AgendamentoComSucesso";
 import Cabecalho from "@/components/shared/Cabecalho";
 
