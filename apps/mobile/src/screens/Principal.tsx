@@ -2,12 +2,10 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, Text, StyleSheet } from "react-native";
 
-import Home from "./Inicio";
-import Agendamento from "./Agendamentos";
+import Agendamento from "./Agendamento";
 import Usuario from "./Usuario";
 import Icone from "../components/shared/Icone";
 import Inicio from "./Inicio";
-import Agendamentos from "./Agendamentos";
 
 const Tab = createBottomTabNavigator();
 
@@ -60,12 +58,7 @@ export default function Principal({ navigation }: any) {
       }}
     >
       {tabScreen("Inicio", Inicio, "Inicio", "home-outline")}
-      {tabScreen(
-        "Agendamentos",
-        Agendamentos,
-        "Agendamentos",
-        "calendar-outline"
-      )}
+      {tabScreen("Agendamento", Agendamento, "Agendamento", "calendar-outline")}
       {tabScreen("Usuario", Usuario, "Usuario", "person-outline")}
     </Tab.Navigator>
   );

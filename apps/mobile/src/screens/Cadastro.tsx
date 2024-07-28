@@ -126,6 +126,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "white",
     textAlign: "center",
+    marginBottom: 20,
+    marginHorizontal: 20,
   },
   formulario: {
     padding: 40,
