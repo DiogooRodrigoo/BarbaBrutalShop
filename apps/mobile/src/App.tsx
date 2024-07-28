@@ -22,7 +22,11 @@ export default function App() {
               component={Cadastro}
               options={{ headerShown: false }}
             />
-            <Stack.Screen name="Principal" component={Principal} />
+            <Stack.Screen
+              name="Principal"
+              component={Principal}
+              options={{ headerShown: false }}
+            />
             <Stack.Screen name="Sumario" component={Sumario} />
           </Stack.Navigator>
         </NavigationContainer>
