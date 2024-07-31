@@ -1,8 +1,6 @@
-"use client"; // retirar
-
+import { createContext, useCallback, useEffect, useState } from "react";
 import { Profissional, Servico } from "@barba/core";
 import { DataUtils } from "@barba/core";
-import { createContext, useCallback, useEffect, useState } from "react";
 import useUsuario from "../hooks/useUsuario";
 import useAPI from "../hooks/useAPI";
 
@@ -74,7 +72,7 @@ export function ProvedorAgendamento({
   async function agendar() {
     if (!usuario?.email) return;
 
-    await httpPost("agendamento", {
+    await httpPost("agendamentos", {
       emailCliente: usuario.email,
       data: data!,
       profissional: profissional!,
@@ -97,7 +95,7 @@ export function ProvedorAgendamento({
         if (!data || !profissional) return [];
         const dtString = data.toISOString().slice(0, 10);
         const ocupacao = await httpGet(
-          `agendamentos/ocupacao${profissional!.id}/${dtString}`
+          `agendamentos/ocupacao/${profissional!.id}/${dtString}`
         );
         return ocupacao ?? [];
       } catch (e) {
