@@ -3,7 +3,6 @@ import { useCallback } from "react";
 const URL_BASE = process.env.URL_BASE;
 
 export default function useAPI() {
-  console.log("URL_BASE", URL_BASE);
   const httpGet = useCallback(async function (uri: string): Promise<any> {
     try {
       const res = await fetch(`${URL_BASE}/${uri}`);

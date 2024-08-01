@@ -1,11 +1,11 @@
-import imagens from "@/src/data/constants/imagens";
-import { Servico } from "@barba/core";
 import { useServicos } from "@barba/ui";
-import { Text, View, StyleSheet, Pressable, Image } from "react-native";
+import { Servico } from "@barba/core";
+import { Image, StyleSheet, Text, Pressable, View } from "react-native";
+import imagens from "../../data/constants/imagens";
 
-interface ServicoInputProps {
+interface ServicosInputProps {
   servicos: Servico[];
-  servicoMudou: (servicos: Servico[]) => void;
+  servicosMudou: (servicos: Servico[]) => void;
 }
 
 function Opcao(props: {
@@ -40,14 +40,13 @@ function Opcao(props: {
   );
 }
 
-export default function ServicoInput(props: ServicoInputProps) {
-  const { servicos, servicoMudou } = props;
+export default function ServicosInput(props: ServicosInputProps) {
+  const { servicos, servicosMudou } = props;
   const { servicos: todosOsServicos } = useServicos();
 
-  function alterarMarcacaoServico(servico: Servico) {
+  function alternarMarcacaoServico(servico: Servico) {
     const encontrado = servicos.find((s) => s.id === servico.id);
-
-    servicoMudou(
+    servicosMudou(
       encontrado
         ? servicos.filter((s) => s.id !== servico.id)
         : [...servicos, servico]
@@ -59,7 +58,7 @@ export default function ServicoInput(props: ServicoInputProps) {
       {todosOsServicos.map((s) => (
         <Opcao
           key={s.id}
-          onClick={alterarMarcacaoServico}
+          onClick={alternarMarcacaoServico}
           servico={s}
           selecionado={servicos.some((serv) => serv.id === s.id)}
         />
@@ -75,6 +74,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
+  },
+  servicoContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#18181b",
+    borderRadius: 8,
+    padding: 2,
   },
   servicoCard: {
     borderRadius: 8,

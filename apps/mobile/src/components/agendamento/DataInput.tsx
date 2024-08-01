@@ -1,6 +1,6 @@
 import { View } from "react-native";
-import DiaInput from "./DiaInput";
 import HorariosInput from "./HorariosInput";
+import DiaInput from "./DiaInput";
 
 export interface DataInputProps {
   data: Date;
@@ -9,14 +9,14 @@ export interface DataInputProps {
 }
 
 export default function DataInput(props: DataInputProps) {
-  const { data, dataMudou, quantidadeDeSlots } = props;
+  const { data, quantidadeDeSlots, dataMudou } = props;
 
   return (
     <View>
       <DiaInput data={data} dataMudou={dataMudou} />
       <HorariosInput
         data={data}
-        quantidadeHorarios={quantidadeDeSlots}
+        qtdeHorarios={quantidadeDeSlots}
         dataMudou={dataMudou}
       />
     </View>

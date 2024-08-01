@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { View, Text, SafeAreaView, ScrollView, StyleSheet } from "react-native";
-import useAgendamento from "../data/hooks/useAgendamento";
-import Passos from "../components/agendamento/Passos";
+import { useState } from "react";
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Profissional, Servico } from "@barba/core";
+import useAgendamento from "../data/hooks/useAgendamento";
 import ProfissionalInput from "../components/agendamento/ProfissionalInput";
-import ServicoInput from "../components/agendamento/ServicoInput";
+import Passos from "../components/agendamento/Passos";
 import DataInput from "../components/agendamento/DataInput";
+import ServicosInput from "../components/agendamento/ServicosInput";
 
-export default function Agendamento({ navigation }: any) {
+export default function Agendamentos({ navigation }: any) {
   const [permiteProximoPasso, setPermiteProximoPasso] =
     useState<boolean>(false);
   const {
     profissional,
     servicos,
     data,
-    selecionarData,
     selecionarProfissional,
     selecionarServicos,
+    selecionarData,
     quantidadeDeSlots,
   } = useAgendamento();
 
@@ -34,7 +34,7 @@ export default function Agendamento({ navigation }: any) {
     selecionarData(data);
 
     const temData = data;
-    const horaValida = data.getHours() >= 0 && data.getHours() <= 21;
+    const horaValida = data.getHours() >= 8 && data.getHours() <= 21;
     setPermiteProximoPasso(temData && horaValida);
   }
 
@@ -53,7 +53,7 @@ export default function Agendamento({ navigation }: any) {
               profissional={profissional}
               profissionalMudou={profissionalMudou}
             />
-            <ServicoInput servicos={servicos} servicoMudou={servicosMudou} />
+            <ServicosInput servicos={servicos} servicosMudou={servicosMudou} />
             <DataInput
               data={data}
               dataMudou={dataMudou}
@@ -86,5 +86,10 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "700",
     textAlign: "center",
+  },
+  imagemDeFundo: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
   },
 });

@@ -1,23 +1,21 @@
-import React from "react";
 import {
-  View,
   ImageBackground,
   SafeAreaView,
-  StyleSheet,
   ScrollView,
+  StyleSheet,
+  View,
 } from "react-native";
-
 import UltimosAgendamentos from "../components/agendamento/UltimosAgendamentos";
 
-export default function Inicio() {
+export default function Home() {
   return (
     <ImageBackground
-      style={styles.imagemDeFundo}
       source={require("../../assets/inicio/fundo.png")}
+      style={styles.imagemDeFundo}
     >
       <SafeAreaView style={styles.areaView}>
         <ScrollView contentContainerStyle={styles.scrollViewConteudo}>
-          <View style={styles.container}>
+          <View style={styles.view}>
             <UltimosAgendamentos />
           </View>
         </ScrollView>
@@ -27,12 +25,6 @@ export default function Inicio() {
 }
 
 const styles = StyleSheet.create({
-  imagemDeFundo: {
-    flex: 1,
-    resizeMode: "cover",
-    width: "100%",
-    height: "100%",
-  },
   areaView: {
     flex: 1,
     width: "100%",
@@ -42,8 +34,14 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
   },
-  container: {
+  view: {
     width: "100%",
     justifyContent: "flex-start",
+  },
+  imagemDeFundo: {
+    flex: 1,
+    resizeMode: "cover",
+    width: "100%",
+    height: "100%",
   },
 });

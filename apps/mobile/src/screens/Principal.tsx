@@ -1,21 +1,14 @@
-import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Text, StyleSheet } from "react-native";
-
+import { StyleSheet, Text, View } from "react-native";
+import Inicio from "./Inicio";
 import Agendamento from "./Agendamento";
 import Usuario from "./Usuario";
 import Icone from "../components/shared/Icone";
-import Inicio from "./Inicio";
 
 const Tab = createBottomTabNavigator();
 
 export default function Principal({ navigation }: any) {
-  function tabScreen(
-    nome: string,
-    componente: any,
-    label: string,
-    icone: string
-  ) {
+  function tab(nome: string, componente: any, label: string, icone: string) {
     return (
       <Tab.Screen
         name={nome}
@@ -27,12 +20,12 @@ export default function Principal({ navigation }: any) {
               <Icone
                 nome={icone as any}
                 tamanho={24}
-                color={focused ? "#29a7ea" : "#9da2ae"}
+                color={focused ? "#29A7EA" : "#9DA2AE"}
               />
               <Text
                 style={{
                   ...styles.tabScreenText,
-                  color: focused ? "#29a7ea" : "#9da2ae",
+                  color: focused ? "#29A7EA" : "#9DA2AE",
                 }}
               >
                 {label}
@@ -57,9 +50,9 @@ export default function Principal({ navigation }: any) {
         },
       }}
     >
-      {tabScreen("Inicio", Inicio, "Inicio", "home-outline")}
-      {tabScreen("Agendamento", Agendamento, "Agendamento", "calendar-outline")}
-      {tabScreen("Usuario", Usuario, "Usuario", "person-outline")}
+      {tab("Inicio", Inicio, "Início", "home-outline")}
+      {tab("Agendamento", Agendamento, "Agendamento", "calendar-outline")}
+      {tab("Usuario", Usuario, "Usuário", "person-outline")}
     </Tab.Navigator>
   );
 }

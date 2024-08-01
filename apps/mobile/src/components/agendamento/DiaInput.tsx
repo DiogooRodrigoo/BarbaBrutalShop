@@ -8,12 +8,11 @@ export interface DiaInputProps {
 
 export default function DiaInput(props: DiaInputProps) {
   function renderizarDia(data: Date) {
-    const selecionado = data.getDate() === props.data.getDate();
-
     if (data.getDay() === 0) {
       data.setDate(data.getDate() + 1);
     }
 
+    const selecionado = data.getDate() === props.data.getDate();
     return (
       <View
         key={data.getTime()}
@@ -35,7 +34,6 @@ export default function DiaInput(props: DiaInputProps) {
               >
                 {data.getDate()}
               </Text>
-
               <Text
                 style={{
                   ...styles.mesTexto,
@@ -47,7 +45,6 @@ export default function DiaInput(props: DiaInputProps) {
                   .slice(0, 3)}
               </Text>
             </View>
-
             <Text
               style={{
                 color: selecionado ? "black" : "#e4e4e7",
@@ -69,7 +66,7 @@ export default function DiaInput(props: DiaInputProps) {
       <Text style={{ color: "#e4e4e7", fontSize: 18, fontWeight: "bold" }}>
         Dias Disponíveis
       </Text>
-      <View style={styles.container}>
+      <View style={styles.diaContainer}>
         {Array.from({ length: 7 })
           .map((_, i) => new Date(DataUtils.hoje().getTime() + 86400000 * i))
           .filter((date) => date.getDay() !== 0)
@@ -80,7 +77,7 @@ export default function DiaInput(props: DiaInputProps) {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  diaContainer: {
     alignItems: "center",
     flexDirection: "row",
     marginVertical: 16,
