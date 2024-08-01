@@ -4,6 +4,8 @@ import useAgendamento from "../data/hooks/useAgendamento";
 import Passos from "../components/agendamento/Passos";
 import { Profissional, Servico } from "@barba/core";
 import ProfissionalInput from "../components/agendamento/ProfissionalInput";
+import ServicoInput from "../components/agendamento/ServicoInput";
+import DataInput from "../components/agendamento/DataInput";
 
 export default function Agendamento({ navigation }: any) {
   const [permiteProximoPasso, setPermiteProximoPasso] =
@@ -23,8 +25,8 @@ export default function Agendamento({ navigation }: any) {
     setPermiteProximoPasso(!!profissional);
   }
 
-  function servicoMudou(profissional: Servico[]) {
-    servicoMudou(servicos);
+  function servicosMudou(servicos: Servico[]) {
+    selecionarServicos(servicos);
     setPermiteProximoPasso(servicos.length > 0);
   }
 
@@ -50,6 +52,12 @@ export default function Agendamento({ navigation }: any) {
             <ProfissionalInput
               profissional={profissional}
               profissionalMudou={profissionalMudou}
+            />
+            <ServicoInput servicos={servicos} servicoMudou={servicosMudou} />
+            <DataInput
+              data={data}
+              dataMudou={dataMudou}
+              quantidadeDeSlots={quantidadeDeSlots()}
             />
           </Passos>
         </View>

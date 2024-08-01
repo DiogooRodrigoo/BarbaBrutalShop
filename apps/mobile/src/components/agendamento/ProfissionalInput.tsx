@@ -1,14 +1,14 @@
-import imagens from "@/src/data/constants/imagens";
-import { Profissional } from "@barba/core";
 import { useProfissionais } from "@barba/ui";
-import { Text, View, StyleSheet, Pressable, Image } from "react-native";
+import { Profissional } from "@barba/core";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import imagens from "../../data/constants/imagens";
 
-interface ProfissionalInputProp {
+interface ProfissionalInputProps {
   profissional: Profissional | null;
   profissionalMudou: (profissional: Profissional) => void;
 }
 
-export default function ProfissionalInput(props: ProfissionalInputProp) {
+export default function ProfissionalInput(props: ProfissionalInputProps) {
   const { profissional, profissionalMudou } = props;
   const { profissionais } = useProfissionais();
 
@@ -24,6 +24,7 @@ export default function ProfissionalInput(props: ProfissionalInputProp) {
         <Pressable onPress={() => profissionalMudou(p)}>
           <View style={{ alignItems: "center" }}>
             <Image
+              style={{ width: 100, height: 100, borderRadius: 6 }}
               source={
                 imagens.profissionais.find((pr) => pr.id === p.id)?.imagem
               }
@@ -37,7 +38,11 @@ export default function ProfissionalInput(props: ProfissionalInputProp) {
     );
   }
 
-  return <View>{profissionais.map((p) => renderizarProfissional(p))}</View>;
+  return (
+    <View style={styles.container}>
+      {profissionais.map((p) => renderizarProfissional(p))}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
