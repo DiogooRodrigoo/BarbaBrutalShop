@@ -27,7 +27,13 @@ export default function App() {
               component={Principal}
               options={{ headerShown: false }}
             />
-            <Stack.Screen name="Sumario" component={Sumario} />
+            <Stack.Screen
+              name="Sumario"
+              component={Sumario}
+              options={{
+                headerShown: false,
+              }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </ProvedorAgendamento>

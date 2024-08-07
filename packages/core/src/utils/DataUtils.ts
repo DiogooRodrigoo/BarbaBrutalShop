@@ -12,4 +12,13 @@ export default class DataUtils {
 
     return novaData;
   }
+
+  static formatarData(data: Date): string {
+    return data.toLocaleDateString("pt-BR", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  }
 }

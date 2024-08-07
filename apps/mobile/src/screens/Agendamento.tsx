@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+} from "react-native";
 import { Profissional, Servico } from "@barba/core";
 import useAgendamento from "../data/hooks/useAgendamento";
 import ProfissionalInput from "../components/agendamento/ProfissionalInput";
